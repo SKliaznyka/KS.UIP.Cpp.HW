@@ -7,7 +7,8 @@ using std::cin;
 using std::cout;
 int nNumber(0),
 nExponent(0),
-nHundreds(0), nDecimals(0), nDigit(0);
+nHundreds(0), nDecimals(0), nDigit(0),
+nDay(0), nMonth(0), nYear(0);
 char cExponent('0'),
 cSymbol('0');
 double dXcoord(0.0), dYcoord(0.0), dRadius(12.0);
@@ -17,8 +18,9 @@ int main()
 	if (false)
 	{
 		/*Task 01.
-	Пользователь вводит число int. Определить является ли число положительным или отрицательным.
-	Проверить равно ли 0 введенное пользователем число.
+	User input the number (int). 
+	Determine: is the number Positive or Negative.
+	Check if the Number is NULL.
 	*/
 		cout << "HW01. Task01:\n";
 		cout << "\n Enter an integer Number: \t";
@@ -38,12 +40,14 @@ int main()
 		cout << "================================= \n";
 	
 }
+
 	if (false)
 	{
 		/*
 		HW01. Task 02-1:
-		Пользователь вводит число. 
-		Пользователь вводит степень (0...3), в которую число возводится.
+		User input the Number (int). 
+		User input the Exponential number (0...3), 
+		Do the calculation. 
 		*/
 		cout << "HW01. Task 02-1 (exponentiation 0...3): \n";
 		cout << "Enter the Number, please: \t";
@@ -70,15 +74,16 @@ int main()
 		}
 		cout << "================================= \n";
 	}
+
 	if (false)
 	{
 		/*
 		HW01. Task 02-2:
-		Пользователь вводит число.
-		Пользователь вводит тип операции возведения в степень
+		User input the Number (int).
+		User choose the Type of Exponential operation:
 		1. Square
 		2. Cube
-		Выполнить вычисление.
+		Do calculation.
 		*/
 		cout << "HW01. Task 02-2 (exponentiation 0...3): \n";
 		cout << "Enter the Number, please: \t";
@@ -105,8 +110,8 @@ int main()
 	{
 		/*
 		HW01. Task 03:
-		Пользователь вводит число.
-		Определить, заканчивается ли оно НУЛЕМ.
+		User input the Number (int).
+		Determine, IF the end of the number is equal to "0".
 		*/
 		cout << "HW01. Task 03 (If the last DIGIT is '0'?): \n";
 		cout << "\n Enter the Number, please: \t";
@@ -126,8 +131,8 @@ int main()
 	{
 		/*
 		HW01. Task 04:
-		Пользователь вводит трехзначное число.
-		Вывести его в столбик (каждая цифра в отдельной строке).
+		User input the 3-DIGIT Number (int).
+		Show this number in column (each digit in separate row).
 		*/
 		cout << "HW01. Task 04 (Number in column): \n";
 		cout << "\n Enter the 3-Digit Number, please: \t";
@@ -157,8 +162,8 @@ int main()
 	{
 		/*
 		HW01. Task 05:
-		Пользователь вводит символ.
-		Определить, это малая / большая буква или вообще не буква.
+		User input the Character (char).
+		Determine: is it regular Letter? / Is it Capital Letter? / Is it NOT a Letter?.
 		*/
 		cout << "HW01. Task 05 (If the symbol Capital or Regular): \n";
 		cout << "\n Enter the Letter, please: \t";
@@ -182,9 +187,11 @@ int main()
 	{
 		/*
 		HW01. Task 06:
-		Есть мишень с центром (0,0). Радиус =12. 
-		Пользователь вводит координаты точки.
-		Попадает ли точка в мишень?
+		Circle-Target has center with coordinate (0,0).
+		Radius = 12.
+		User input the Point Coordinates  (x, y)
+		
+		Does this Point belong to Target?
 		*/
 		cout << "HW01. Task 06 (CIRCLE. R=12): \n";
 		cout << "\n Enter the X-coordinate, please: \t";
@@ -202,17 +209,93 @@ int main()
 		cout << "================================= \n";
 	}
 
-	if (false)
+	if (true)
 	{
 		/*
-		HW01. Task 07:
-		Пользователь вводит число.
-		
+		HW01. Task 07-1 (without "Fall-Through"):
+		User input the Numbers (int):
+		- Day
+		- Month
+		- Year.
+		Calculate the Total number of days since 1st of January of the Year till the specified date.
+		Try to use "fall-through"(w/o Break) in the Switch-Case operator.
 		*/
-		cout << "HW01. Task 07 (If the last DIGIT is '0'?): \n";
-		cout << "\n Enter the Number, please: \t";
-		cin >> nNumber;
-
+		cout << "HW01. Task 07 (The SUMM of days before specified Date): \n";
+		cout << "\n Enter the Day, please: \t";
+		cin >> nDay;
+		cout << "\n Enter the Month, please: \t";
+		cin >> nMonth;
+		cout << "\n Enter the Year, please: \t";
+		cin >> nYear;
+		if (nDay > 0 && nDay <=31 && nMonth > 0 && nYear >= 0)
+		{
+			if (nYear % 4 != 0)
+			{
+				switch (nMonth)
+				{
+				case (1):
+					cout << "\n From 01 Januar till the Specified Date: \t" << nDay << "days\n";
+					break;
+				case (2):
+					cout << "\n From 01 Januar till the Specified Date: \t" << 31 + nDay << "days\n";
+					break;
+				case (3):
+				case (4):
+				case (5):
+				case (6):
+				case (7):
+				case (8):
+				case (10):
+				case (12):
+					cout << "\n From 01 Januar till the Specified Date: \t" <<
+						30 * (nMonth - 1) + nMonth / 2 - 2 + nDay << "days\n";
+					break;
+				case (9):
+				case (11):
+					cout << "\n From 01 Januar till the Specified Date: \t" <<
+						30 * (nMonth - 1) + (nMonth + 1) / 2 - 2 + nDay << "days\n";
+					break;
+				default:
+					cout << "\n ERROR! You entered wrong Number(s). Try again. \n";
+					break;
+				}
+			}
+			else
+			{
+				switch (nMonth)
+				{
+				case (1):
+					cout << "\n From 01 Januar till the Specified Date: \t" << nDay << "days\n";
+					break;
+				case (2):
+					cout << "\n From 01 Januar till the Specified Date: \t" << 31 + nDay << "days\n";
+					break;
+				case (3):
+				case (4):
+				case (5):
+				case (6):
+				case (7):
+				case (8):
+				case (10):
+				case (12):
+					cout << "\n From 01 Januar till the Specified Date: \t" <<
+						30 * (nMonth - 1) + nMonth / 2 - 1 + nDay << "days\n";
+					break;
+				case (9):
+				case (11):
+					cout << "\n From 01 Januar till the Specified Date: \t" <<
+						30 * (nMonth - 1) + (nMonth + 1) / 2 - 1 + nDay << "days\n";
+					break;
+				default:
+					cout << "\n ERROR! You entered wrong Number(s). Try again. \n";
+					break;
+				}
+			}
+		}
+		else
+		{
+			cout << "\n ERROR! You entered wrong Number(s). Try again. \n";
+		}
 		cout << "================================= \n";
 	}
 
