@@ -57,16 +57,16 @@ int main()
 		std::cin >> nExponent;
 		switch (nExponent)
 		{
-		case (0):
+		case 0:
 			std::cout << nNumber << "^" << nExponent << "=\t 1 \n";
 			break;
-		case (1):
+		case 1:
 			std::cout << nNumber << "^" << nExponent << "=\t" << nNumber << "\n";
 			break;
-		case (2):
+		case 2:
 			std::cout << nNumber << "^" << nExponent << "=\t" << nNumber * nNumber << "\n";
 			break;
-		case (3):
+		case 3:
 			std::cout << nNumber << "^" << nExponent << "=\t" << nNumber * nNumber * nNumber << "\n";
 			break;
 		default:
@@ -94,10 +94,10 @@ int main()
 		std::cin >> cExponent;
 		switch (cExponent)
 		{
-		case ('1'):
+		case '1':
 			std::cout << nNumber << "\t DSquared \t" << "=\t" << nNumber * nNumber << "\n";
 			break;
-		case ('2'):
+		case '2':
 			std::cout << nNumber << "\t Cubed \t" << "=\t" << nNumber * nNumber * nNumber << "\n";
 			break;
 		default:
@@ -213,7 +213,7 @@ int main()
 	if (true)
 	{
 		/*
-		HW01. Task 07-1 (without "Fall-Through"):
+		HW01. Task 07-1 (???"Fall-Through"???):
 		User input the Numbers (int):
 		- Day
 		- Month
@@ -234,25 +234,25 @@ int main()
 			{
 				switch (nMonth)
 				{
-				case (1):
+				case 1:
 					std::cout << "\n From 01 January till the Specified Date: \t" << nDay << "days\n";
 					break;
-				case (2):
+				case 2:
 					std::cout << "\n From 01 January till the Specified Date: \t" << 31 + nDay << "days\n";
 					break;
-				case (3):
-				case (4):
-				case (5):
-				case (6):
-				case (7):
-				case (8):
-				case (10):
-				case (12):
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
 					std::cout << "\n From 01 January till the Specified Date: \t" <<
 						30 * (nMonth - 1) + nMonth / 2 - 2 + nDay << "days\n";
 					break;
-				case (9):
-				case (11):
+				case 9:
+				case 11:
 					std::cout << "\n From 01 January till the Specified Date: \t" <<
 						30 * (nMonth - 1) + (nMonth + 1) / 2 - 2 + nDay << "days\n";
 					break;
@@ -265,25 +265,25 @@ int main()
 			{
 				switch (nMonth)
 				{
-				case (1):
+				case 1:
 					std::cout << "\n From 01 January till the Specified Date: \t" << nDay << "days\n";
 					break;
-				case (2):
+				case 2:
 					std::cout << "\n From 01 January till the Specified Date: \t" << 31 + nDay << "days\n";
 					break;
-				case (3):
-				case (4):
-				case (5):
-				case (6):
-				case (7):
-				case (8):
-				case (10):
-				case (12):
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
 					std::cout << "\n From 01 January till the Specified Date: \t" <<
 						30 * (nMonth - 1) + nMonth / 2 - 1 + nDay << "days\n";
 					break;
-				case (9):
-				case (11):
+				case 9:
+				case 11:
 					std::cout << "\n From 01 January till the Specified Date: \t" <<
 						30 * (nMonth - 1) + (nMonth + 1) / 2 - 1 + nDay << "days\n";
 					break;
@@ -299,7 +299,7 @@ int main()
 		}
 		std::cout << "================================= \n";
 	}
-
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
