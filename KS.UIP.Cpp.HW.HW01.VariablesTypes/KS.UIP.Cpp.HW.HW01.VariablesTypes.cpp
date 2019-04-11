@@ -3,19 +3,18 @@
 
 #include "pch.h"
 #include <iostream>
-//using std::cin;
-//using std::cout;
-
-int nNumber(0),
-nExponent(0),
-nHundreds(0), nDecimals(0), nDigit(0),
-nDay(0), nMonth(0), nYear(0);
-char cExponent('0'),
-cSymbol('0');
-double dXcoord(0.0), dYcoord(0.0), dRadius(12.0);
 
 int main()
 {
+	int nNumber(0),
+		nExponent(0),
+		nHundreds(0), nDecimals(0), nDigit(0),
+		nDay(0), nMonth(0), nYear(0),
+		nDeltaDay(0);
+	char cExponent('0'),
+		cSymbol('0');
+	double dXcoord(0.0), dYcoord(0.0), dRadius(0.0);
+
 	if (false)
 	{
 		/*Task 01.
@@ -38,7 +37,7 @@ int main()
 		{
 			std::cout << "\n Input Number is NEGATIVE \n";
 		}
-		std::cout << "================================= \n";
+		std::cout << "================================= \n\n";
 	
 }
 
@@ -73,7 +72,7 @@ int main()
 			std::cout << "\n ERROR! Wrong exponentiation entering! Try Next time. \n";
 			break;
 		}
-		std::cout << "================================= \n";
+		std::cout << "================================= \n\n";
 	}
 
 	if (false)
@@ -104,7 +103,7 @@ int main()
 			std::cout << "\n ERROR! Wrong exponentiation Type entering! Try Next time. \n";
 			break;
 		}
-		std::cout << "================================= \n";
+		std::cout << "================================= \n\n";
 	}
 
 	if (false)
@@ -125,7 +124,7 @@ int main()
 		{
 			std::cout << "The last DIGIT of the number IS NOT:  '0' \n";
 		}
-		std::cout << "================================= \n";
+		std::cout << "================================= \n\n";
 	}
 	
 	if (false)
@@ -156,7 +155,7 @@ int main()
 			std::cout << nDecimals << "\n";
 			std::cout << nDigit << "\n";
 		}
-		std::cout << "================================= \n";
+		std::cout << "================================= \n\n";
 	}
 
 	if (false)
@@ -169,11 +168,11 @@ int main()
 		std::cout << "HW01. Task 05 (If the symbol Capital or Regular): \n";
 		std::cout << "\n Enter the Letter, please: \t";
 		std::cin >> cSymbol;
-		if ((int)cSymbol >= 65 && (int)cSymbol <= 90)
+		if ((int)cSymbol >= 'A' && (int)cSymbol <= 'Z')
 		{
 			std::cout << "\n The Letter is CAPITAL \n";
 		}
-		else if ((int)cSymbol >= 97 && (int)cSymbol <= 122)
+		else if ((int)cSymbol >= 'a' && (int)cSymbol <= 'z')
 		{
 			std::cout << "\n The Letter is REGULAR \n";
 		}
@@ -181,7 +180,7 @@ int main()
 		{
 			std::cout << "\n The Symbol is NOT a LETTER \n";
 		}
-		std::cout << "================================= \n";
+		std::cout << "================================= \n\n";
 	}
 
 	if (false)
@@ -199,18 +198,19 @@ int main()
 		std::cin >> dXcoord;
 		std::cout << "\n Enter the Y-coordinate, please: \t";
 		std::cin >> dYcoord;
-		if (sqrt(dXcoord*dXcoord + dYcoord * dYcoord) < 12)
+		dRadius = 12.0;
+		if ((dXcoord*dXcoord + dYcoord * dYcoord) < (dRadius * dRadius))
 		{
-			std::cout << "\n You shoot the Target\n";
+			std::cout << "\n You SHOOT the Target\n";
 		}
 		else
 		{
-			std::cout << "\n You MISSed the Target\n";
+			std::cout << "\n You MISS the Target\n";
 		}
-		std::cout << "================================= \n";
+		std::cout << "================================= \n\n";
 	}
 
-	if (true)
+	if (false)
 	{
 		/*
 		HW01. Task 07-1 (???"Fall-Through"???):
@@ -221,7 +221,7 @@ int main()
 		Calculate the Total number of days since 1st of January of the Year till the specified date.
 		Try to use "fall-through"(w/o Break) in the Switch-Case operator.
 		*/
-		std::cout << "HW01. Task 07 (The SUMM of days before specified Date): \n";
+		std::cout << "HW01. Task 07-1 (The SUMM of days before specified Date): \n";
 		std::cout << "\n Enter the Day, please: \t";
 		std::cin >> nDay;
 		std::cout << "\n Enter the Month, please: \t";
@@ -238,7 +238,15 @@ int main()
 					std::cout << "\n From 01 January till the Specified Date: \t" << nDay << "days\n";
 					break;
 				case 2:
-					std::cout << "\n From 01 January till the Specified Date: \t" << 31 + nDay << "days\n";
+					if (nDay <= 28)
+					{
+						std::cout << "\n From 01 January till the Specified Date: \t" << 
+							31 + nDay << "days\n";
+					}
+					else
+					{
+						std::cout << "\n ERROR! You entered wrong Day Number. Try again. \n";
+					}
 					break;
 				case 3:
 				case 4:
@@ -269,7 +277,15 @@ int main()
 					std::cout << "\n From 01 January till the Specified Date: \t" << nDay << "days\n";
 					break;
 				case 2:
-					std::cout << "\n From 01 January till the Specified Date: \t" << 31 + nDay << "days\n";
+					if (nDay <= 29)
+					{
+						std::cout << "\n From 01 January till the Specified Date: \t" << 
+							31 + nDay << "days\n";
+					}
+					else
+					{
+						std::cout << "\n ERROR! You entered wrong Day Number. Try again. \n";
+					}
 					break;
 				case 3:
 				case 4:
@@ -297,7 +313,92 @@ int main()
 		{
 			std::cout << "\n ERROR! You entered wrong Number(s). Try again. \n";
 		}
-		std::cout << "================================= \n";
+		std::cout << "================================= \n\n";
+	}
+
+	if (true)
+	{
+		/*
+		HW01. Task 07-2 (Approach #2. 
+		Used minor add to ClassWork - Ternary operator):
+		User input the Numbers (int):
+		- Day
+		- Month
+		- Year.
+		Calculate the Total number of days since 1st of January of the Year till the specified date.
+		Try to use "fall-through"(w/o Break) in the Switch-Case operator.
+		*/
+
+		std::cout << "HW01. Task 07-2 (The SUMM of days before specified Date): \n";
+		std::cout << "\n Enter the Day, please: \t";
+		std::cin >> nDay;
+		std::cout << "\n Enter the Month, please: \t";
+		std::cin >> nMonth;
+		std::cout << "\n Enter the Year, please: \t";
+		std::cin >> nYear;
+		
+		nDeltaDay = (nYear % 4 == 0) ? 1 : 0;    //used Ternary Operator. Check if LEAP Year.
+		
+		if (nYear >= 0 && nDay > 0 && nDay <= 31 && nMonth >= 0)
+		{
+			if ((nMonth == 2 && nDay > 29 && nDeltaDay == 1) ||
+				(nMonth == 2 && nDay > 28 && nDeltaDay == 0) ||
+				(((nMonth == 4) || (nMonth == 6) || (nMonth == 9) || (nMonth == 11)) && nDay > 30))
+			{
+				std::cout << "\n ERROR! You entered wrong DAY. Try again. \n";
+			}
+			else
+			{
+				switch (nMonth)
+				{
+				case 1:
+					std::cout << "From 1st January \t:" << nDay << "\t days \n";
+					break;
+				case 2:
+					std::cout << "From 1st January \t:" << 31 + nDay << "\t days \n";
+					break;
+				case 3:
+					std::cout << "From 1st January: \t" << 59 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 4:
+					nDay = nDay + 31;
+					std::cout << "From 1st January: \t" << 90 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 5:
+					std::cout << "From 1st January: \t" << 120 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 6:
+					std::cout << "From 1st January: \t" << 151 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 7:
+					std::cout << "From 1st January: \t" << 181 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 8:
+					std::cout << "From 1st January: \t" << 212 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 9:
+					std::cout << "From 1st January: \t" << 243 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 10:
+					std::cout << "From 1st January: \t" << 273 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 11:
+					std::cout << "From 1st January: \t" << 304 + nDay + nDeltaDay << "\t days \n";
+					break;
+				case 12:
+					std::cout << "From 1st January: \t" << 334 + nDay + nDeltaDay << "\t days \n";
+					break;
+				default:
+					std::cout << "\n ERROR! You entered wrong Number(s). Try again. \n";
+				}
+			}
+		}
+		else
+		{
+			std::cout << "\n ERROR! You entered wrong Number(s). Try again. \n";
+		}
+		
+		std::cout << "================================= \n\n";
 	}
 	return 0;
 }
