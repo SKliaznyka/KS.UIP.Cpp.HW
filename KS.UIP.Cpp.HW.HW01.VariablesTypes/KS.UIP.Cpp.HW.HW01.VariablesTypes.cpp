@@ -18,7 +18,7 @@ int main()
 	if (false)
 	{
 		/*Task 01.
-	User input the number (int). 
+	User input the number (int).
 	Determine: is the number Positive or Negative.
 	Check if the Number is NULL.
 	*/
@@ -38,16 +38,16 @@ int main()
 			std::cout << "\n Input Number is NEGATIVE \n";
 		}
 		std::cout << "================================= \n\n";
-	
-}
+
+	}
 
 	if (false)
 	{
 		/*
 		HW01. Task 02-1:
-		User input the Number (int). 
-		User input the Exponential number (0...3), 
-		Do the calculation. 
+		User input the Number (int).
+		User input the Exponential number (0...3),
+		Do the calculation.
 		*/
 		std::cout << "HW01. Task 02-1 (exponentiation 0...3): \n";
 		std::cout << "Enter the Number, please: \t";
@@ -126,7 +126,7 @@ int main()
 		}
 		std::cout << "================================= \n\n";
 	}
-	
+
 	if (false)
 	{
 		/*
@@ -190,7 +190,7 @@ int main()
 		Circle-Target has center with coordinate (0,0).
 		Radius = 12.
 		User input the Point Coordinates  (x, y)
-		
+
 		Does this Point belong to Target?
 		*/
 		std::cout << "HW01. Task 06 (CIRCLE. R=12): \n";
@@ -228,7 +228,7 @@ int main()
 		std::cin >> nMonth;
 		std::cout << "\n Enter the Year, please: \t";
 		std::cin >> nYear;
-		if (nDay > 0 && nDay <=31 && nMonth > 0 && nYear >= 0)
+		if (nDay > 0 && nDay <= 31 && nMonth > 0 && nYear >= 0)
 		{
 			if (nYear % 4 != 0)
 			{
@@ -240,7 +240,7 @@ int main()
 				case 2:
 					if (nDay <= 28)
 					{
-						std::cout << "\n From 01 January till the Specified Date: \t" << 
+						std::cout << "\n From 01 January till the Specified Date: \t" <<
 							31 + nDay << "days\n";
 					}
 					else
@@ -279,7 +279,7 @@ int main()
 				case 2:
 					if (nDay <= 29)
 					{
-						std::cout << "\n From 01 January till the Specified Date: \t" << 
+						std::cout << "\n From 01 January till the Specified Date: \t" <<
 							31 + nDay << "days\n";
 					}
 					else
@@ -316,10 +316,10 @@ int main()
 		std::cout << "================================= \n\n";
 	}
 
-	if (true)
+	if (false)
 	{
 		/*
-		HW01. Task 07-2 (Approach #2. 
+		HW01. Task 07-2 (Approach #2.
 		Used minor add to ClassWork - Ternary operator):
 		User input the Numbers (int):
 		- Day
@@ -336,9 +336,9 @@ int main()
 		std::cin >> nMonth;
 		std::cout << "\n Enter the Year, please: \t";
 		std::cin >> nYear;
-		
+
 		nDeltaDay = (nYear % 4 == 0) ? 1 : 0;    //used Ternary Operator. Check if LEAP Year.
-		
+
 		if (nYear >= 0 && nDay > 0 && nDay <= 31 && nMonth >= 0)
 		{
 			if ((nMonth == 2 && nDay > 29 && nDeltaDay == 1) ||
@@ -397,7 +397,7 @@ int main()
 		{
 			std::cout << "\n ERROR! You entered wrong Number(s). Try again. \n";
 		}
-		
+
 		std::cout << "================================= \n\n";
 	}
 	return 0;
